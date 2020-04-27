@@ -9,16 +9,22 @@
 
 ### Set project as default
 ``` bash
-gcloud config set project investec-oracle
+gcloud config set project {{project-id}}
 ```
 
-### Open shell for project
-<walkthrough-open-cloud-shell-button></walkthrough-open-cloud-shell-button>
+### Enable Api's
+<walkthrough-enable-apis apis="pubsub.googleapis.com,cloudfunctions.googleapis.com,firestore.googleapis.com"></walkthrough-enable-apis>
+
+or
 
 ``` bash
 gcloud services enable pubsub.googleapis.com
+````
+```` bash
 gcloud services enable cloudfunctions.googleapis.com
+````
+``` bash
 gcloud services enable firestore.googleapis.com
-```
+````
 
 
