@@ -1,0 +1,17 @@
+{
+  "name": "investec-command-center-subscribe",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "Christo Bezuidenhout",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/bezchristo/investec-command-center.git"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    
+  }
+}
