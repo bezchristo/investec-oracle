@@ -27,7 +27,7 @@ exports.publish = async (req, res) => {
     res
       .status(500)
       .send(
-        'Missing parameter(s); include "topic" and "subscription" properties in your request.'
+        'Missing parameter(s); include "topic" and "message" properties in your request.'
       );
     return;
   }
@@ -47,7 +47,7 @@ exports.publish = async (req, res) => {
   // Publishes a message
   try {
     await topic.publish(messageBuffer);
-    res.status(200).send("Message published.");
+    res.status(200).send("Message published");
   } catch (err) {
     console.error(err);
     res.status(500).send(err);
