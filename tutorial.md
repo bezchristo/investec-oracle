@@ -7,8 +7,18 @@
 ### Create Project
 <walkthrough-project-billing-setup></walkthrough-project-billing-setup>
 
-### Enable Api's
-<walkthrough-enable-apis apis="pubsub.googleapis.com,cloudfunctions.googleapis.com,firestore.googleapis.com"></walkthrough-enable-apis>
+### Set project as default
+``` bash
+gcloud config set project investec-oracle
+```
 
 ### Open shell for project
 <walkthrough-open-cloud-shell-button></walkthrough-open-cloud-shell-button>
+
+``` bash
+gcloud services enable pubsub.googleapis.com
+gcloud services enable cloudfunctions.googleapis.com
+gcloud services enable firestore.googleapis.com
+```
+
+
