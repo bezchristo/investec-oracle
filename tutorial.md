@@ -13,9 +13,6 @@ gcloud config set project {{project-id}}
 ```
 
 ### Enable Api's
-<walkthrough-enable-apis apis="pubsub.googleapis.com,cloudfunctions.googleapis.com,firestore.googleapis.com"></walkthrough-enable-apis>
-
-or
 
 ``` bash
 gcloud services enable pubsub.googleapis.com
