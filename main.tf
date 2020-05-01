@@ -84,7 +84,7 @@ resource "google_cloudfunctions_function_iam_member" "publish_invoker" {
   cloud_function = google_cloudfunctions_function.publish_function.name
 
   role   = "roles/cloudfunctions.invoker"
-  member = "user:investec-oracle@appspot.gserviceaccount.com"
+  member = "serviceAccount:investec-oracle@appspot.gserviceaccount.com"
 }
 
 # IAM entry for a single user to invoke the function

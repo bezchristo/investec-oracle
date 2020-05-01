@@ -21,9 +21,10 @@ exports.getGoogleToken = async (req, res) => {
     .then((idToken) => {
       return idToken;
     })
-    .catch((error) => {
+    .catch((error) => {      
       console.log(error.message);
+      res.status(500).send(error.message);
     });
 
-  return token;
+  return res.status(200).send(token);
 };
