@@ -20,6 +20,10 @@ gcloud config set project {{project-id}}
 gcloud iam service-accounts keys create ~/key.json --iam-account {{project-id}}@appspot.gserviceaccount.com
 ```
 
+<walkthrough-editor-spotlight spotlightId="navigator" filePath="~/cloudshell_open/key.json"
+                              text="My file">
+</walkthrough-editor-spotlight>
+
 <walkthrough-editor-open-file filePath="~/cloudshell_open/key.json">
     Open key.json
 </walkthrough-editor-open-file>
