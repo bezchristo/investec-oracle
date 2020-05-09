@@ -5,9 +5,11 @@
 ## Setup Project
 
 ### Create Project
+
 <walkthrough-project-billing-setup></walkthrough-project-billing-setup>
 
 ### Set project as default
+
 ``` bash
 gcloud config set project {{project-id}}
 ```
@@ -28,5 +30,5 @@ gcloud services enable firestore.googleapis.com
 
 
 ``` bash
-terraform apply -var topic="transactions" -var project="investec-oracle"
+terraform apply -var topic="transactions" -var project="{{project-id}}"
 ```
