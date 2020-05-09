@@ -1,9 +1,9 @@
 variable "topic" {
-    type = "string"
+    type = string
     default = "transactions"
 }
 
 variable "project" {
-    type = "string"
+    type = string
     default = "investec-oracle"
 }

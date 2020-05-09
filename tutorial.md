@@ -28,6 +28,9 @@ gcloud services enable firestore.googleapis.com
 
 ### Apply terraform file and variables
 
+``` bash
+terraform init
+```
 
 ``` bash
 terraform apply -var topic="transactions" -var project="{{project-id}}"
