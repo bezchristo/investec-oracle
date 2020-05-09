@@ -14,6 +14,16 @@
 gcloud config set project {{project-id}}
 ```
 
+### Generate Key for Service Account
+
+``` bash
+gcloud iam service-accounts keys create ~/key.json --iam-account {{project-id}}@appspot.gserviceaccount.com
+```
+
+<walkthrough-editor-open-file filePath="~/key.json">
+    open key.json and copy private key
+</walkthrough-editor-open-file>
+
 ### Enable Api's
 
 ``` bash
