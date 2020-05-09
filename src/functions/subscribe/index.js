@@ -1,14 +1,7 @@
 "use strict";
 
-//exports.subscribe = (pubsubMessage) => {
-  // Print out the data from Pub/Sub, to prove that it worked
-  //console.log(Buffer.from(pubsubMessage.data, "base64").toString());
-//};
-
 const Firestore = require('@google-cloud/firestore');
 const PROJECTID = process.env.GCLOUD_PROJECT;
-
-console.log("Project",PROJECTID);
 
 const COLLECTION_NAME = 'transactions';
 const firestore = new Firestore({
@@ -17,22 +10,17 @@ const firestore = new Firestore({
 });
 
 exports.subscribe = (pubsubMessage) => {  
-
-  console.log("message", pubsubMessage);
-
-  if (req.method === 'POST') {
+    console.log(pubsubMessage);
     // store/insert a new document
-    const data = (req.body) || {};
-    const ttl = Number.parseInt(data.ttl);
-    const ciphertext = (data.ciphertext || '').replace(/[^a-zA-Z0-9\-]*/g, '');
+    const data = JSON.parse(Buffer.from(pubsubMessage.data, "base64").toString()) || {};    
     const created = new Date().getTime();
     return firestore.collection(COLLECTION_NAME)
-      .add({ created, ttl, ciphertext })
+      .add({ created, data })
       .then(doc => {
         console.log("success", doc);
       }).catch(err => {
         console.error(err);
         console.log(error, err);
       });
-  }  
+  
 }
