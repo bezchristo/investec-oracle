@@ -2,6 +2,10 @@ resource "google_pubsub_topic" "master" {
   name = var.topic
 }
 
+resource "google_storage_bucket" "bucket" {
+  name = "century_source_code"
+}
+
 resource "google_storage_bucket_object" "publish_code" {
   name   = "publish.zip"
   bucket = google_storage_bucket.bucket.name
