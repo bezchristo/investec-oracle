@@ -20,9 +20,11 @@ gcloud config set project {{project-id}}
 gcloud iam service-accounts keys create ~/key.json --iam-account {{project-id}}@appspot.gserviceaccount.com
 ```
 
-<walkthrough-editor-open-file filePath="~/key.json">
-    open key.json and copy private key
+<walkthrough-editor-open-file filePath="~/cloudshell_open/key.json">
+    Open key.json
 </walkthrough-editor-open-file>
+
+Copy the private key to use in your env file on the investec platform.
 
 ### Enable Api's
 
