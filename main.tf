@@ -1,9 +1,5 @@
 resource "google_pubsub_topic" "master" {
-  name = "transactions"
-}
-
-resource "google_storage_bucket" "bucket" {
-  name = "century_source_code"
+  name = var.topic
 }
 
 resource "google_storage_bucket_object" "publish_code" {
@@ -35,7 +31,7 @@ resource "google_cloudfunctions_function" "subscribe_function" {
   timeout               = 60
   entry_point           = "subscribe"
 
-  project               = "investec-oracle"
+  project               = var.project
   region                = "us-central1"
 
   event_trigger {
@@ -58,8 +54,12 @@ resource "google_cloudfunctions_function" "publish_function" {
   timeout               = 60
   entry_point           = "publish"
   trigger_http          = true
-  project               = "investec-oracle"
+  project               = var.project
   region                = "us-central1"
+
+  environment_variables = {
+    TOPIC = google_pubsub_topic.master.name
+  }
 }
 
 resource "google_cloudfunctions_function" "token_function" {
@@ -73,7 +73,7 @@ resource "google_cloudfunctions_function" "token_function" {
   timeout               = 60
   entry_point           = "getGoogleToken"
   trigger_http          = true
-  project               = "investec-oracle"
+  project               = var.project
   region                = "us-central1"
 }
 
@@ -84,7 +84,7 @@ resource "google_cloudfunctions_function_iam_member" "publish_invoker" {
   cloud_function = google_cloudfunctions_function.publish_function.name
 
   role   = "roles/cloudfunctions.invoker"
-  member = "serviceAccount:investec-oracle@appspot.gserviceaccount.com"
+  member = "serviceAccount:${var.project}@appspot.gserviceaccount.com"
 }
 
 # IAM entry for a single user to invoke the function

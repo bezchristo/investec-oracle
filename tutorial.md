@@ -24,4 +24,9 @@ gcloud services enable cloudfunctions.googleapis.com
 gcloud services enable firestore.googleapis.com
 ````
 
+### Apply terraform file and variables
 
+
+``` bash
+terraform apply -var topic="transactions" -var project="investec-oracle"
+```

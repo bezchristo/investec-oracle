@@ -1,48 +1,22 @@
 "use strict";
 
-// [START functions_pubsub_setup]
 const { PubSub } = require("@google-cloud/pubsub");
-
-// Instantiates a client
 const pubsub = new PubSub();
-// [END functions_pubsub_setup]
 
 /**
- * Publishes a message to a Cloud Pub/Sub Topic.
- *
- * @example
- * gcloud functions call publish --data '{"topic":"[YOUR_TOPIC_NAME]","message":"Hello, world!"}'
- *
- *   - Replace `[YOUR_TOPIC_NAME]` with your Cloud Pub/Sub topic name.
- *
+ * Publishes a message to a Cloud Pub/Sub Topic. *
  * @param {object} req Cloud Function request context.
  * @param {object} req.body The request body.
- * @param {string} req.body.topic Topic name on which to publish.
- * @param {string} req.body.message Message to publish.
  * @param {object} res Cloud Function response context.
  */
 
-exports.publish = async (req, res) => {
-  if (!req.body.topic || !req.body.message) {
-    res
-      .status(500)
-      .send(
-        'Missing parameter(s); include "topic" and "message" properties in your request.'
-      );
-    return;
-  }
+exports.publish = async (req, res) => {  
 
-  console.log(`Publishing message to topic ${req.body.topic}`);
+  console.log(`Publishing message`);
 
   // References an existing topic
-  const topic = pubsub.topic(req.body.topic);
-
-  const messageObject = {
-    data: {
-      message: req.body.message,
-    },
-  };
-  const messageBuffer = Buffer.from(JSON.stringify(messageObject), "utf8");
+  const topic = pubsub.topic(process.env.TOPIC);
+  const messageBuffer = Buffer.from(JSON.stringify(req.body), "utf8");
 
   // Publishes a message
   try {
