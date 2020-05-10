@@ -66,8 +66,7 @@ async function postTransaction(transaction, token) {
 }
 
 // This function runs after a transaction was successful.
-const afterTransaction = async (transaction) => {
-    
+const afterTransaction = async (transaction) => {    
     let token = await getToken();
 
     if (token) 
