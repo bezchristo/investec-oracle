@@ -2,6 +2,25 @@ resource "google_pubsub_topic" "master" {
   name = var.topic
 }
 
+# zip up our source code
+data "archive_file" "publish_zip" {
+ type        = "zip"
+ source_dir  = "${path.root}/src/functions/publish/"
+ output_path = "${path.root}/src/functions/publish/publish.zip"
+}
+
+data "archive_file" "subscribe_zip" {
+ type        = "zip"
+ source_dir  = "${path.root}/src/functions/subscribe/"
+ output_path = "${path.root}/src/functions/subscribe/subscribe.zip"
+}
+
+data "archive_file" "token_zip" {
+ type        = "zip"
+ source_dir  = "${path.root}/src/functions/token/"
+ output_path = "${path.root}/src/functions/token/token.zip"
+}
+
 resource "google_storage_bucket" "bucket" {
   name = "century_source_code"
 }
