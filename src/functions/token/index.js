@@ -3,11 +3,11 @@
 const { google } = require("googleapis");
 
 exports.getGoogleToken = async (req, res) => {
-  if (!req.body.email || !req.body.key || !req.body.endpoint) {
+  if (!req.body.email || !req.body.key) {
     res
       .status(500)
       .send(
-        'Missing parameter(s); include "email", "key" and "endpoint" properties in your request.'
+        'Missing parameter(s); include "email" and "key" properties in your request.'
       );
     return;
   }
@@ -17,7 +17,7 @@ exports.getGoogleToken = async (req, res) => {
     key: req.body.key,
   });
   let token = await client
-    .fetchIdToken(req.body.endpoint)
+    .fetchIdToken(process.env.transactionUrl)
     .then((idToken) => {
       return idToken;
     })
