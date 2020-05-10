@@ -66,3 +66,14 @@ You can change the topic variable if you want a different topic name.
 ``` bash
 terraform apply -var topic="transactions" -var project="{{project-id}}"
 ```
+
+## Conclusion
+
+Your gcp services are now set up. You can now return to the gitlab project to complete the setup. 
+
+If you are done playing arround and want to terminate your gcp services, run the following command.
+
+``` bash
+terraform destroy
+```
+
