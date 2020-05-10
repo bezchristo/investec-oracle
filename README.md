@@ -66,8 +66,8 @@ async function postTransaction(transaction, token) {
 
 // This function runs after a transaction was successful.
 const afterTransaction = async (transaction) => {
-    // Log transaction
-    let token = await getToken();    
+    
+    let token = await getToken();
 
     if (token) 
     {
