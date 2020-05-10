@@ -79,6 +79,10 @@ resource "google_cloudfunctions_function" "token_function" {
   trigger_http          = true
   project               = var.project
   region                = "us-central1"
+
+  environment_variables = {
+    TRANSACTION_URL = "https://us-central1-${var.project}.cloudfunctions.net/${google_cloudfunctions_function.publish_function.name}"
+  }
 }
 
 # IAM entry for a single user to invoke the function

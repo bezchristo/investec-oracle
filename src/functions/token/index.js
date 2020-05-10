@@ -17,7 +17,7 @@ exports.getGoogleToken = async (req, res) => {
     key: req.body.key,
   });
   let token = await client
-    .fetchIdToken(process.env.transactionUrl)
+    .fetchIdToken(process.env.TRANSACTION_URL)
     .then((idToken) => {
       return idToken;
     })
