@@ -23,7 +23,7 @@ Copy the following into your env.json file in the investec IDE.
 }
 ```
 
-Replace <project-id> and <your generated key> with the project id and key you generated during the gcp tutorial.
+Replace "project-id" and "your generated key" with the project id and key you generated during the GCP tutorial.
 
 Copy the following code into your main.js.
 
