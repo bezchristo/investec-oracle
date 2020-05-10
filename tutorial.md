@@ -5,10 +5,10 @@
 
 ## Introduction
 
-This tutorial will guide you through setting up your investec command center using terraform and the google cloud platform.
-As part of this tutorial you will have to create a gcp project which has billing enabled. Rest assured though, you should fall well underneath the free tier, so no monthly bill.
+This tutorial will guide you through setting up your investec command center using terraform and google cloud platform.
+As part of this tutorial you will create a gcp project which has billing enabled. Rest assured, you should fall within the free tier, so no monthly bill.
 
-When you are ready click start to continue.
+When you are ready, click start to continue.
 
 ## Step 1
 
