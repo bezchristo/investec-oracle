@@ -30,6 +30,7 @@ Copy the following code into your main.js.
 ``` js
 // This function runs before a transaction.
 const beforeTransaction = async (authorization) => {
+    console.log(authorization);
     return true;
 };
 
