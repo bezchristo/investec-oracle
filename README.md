@@ -1,8 +1,8 @@
-# Investec Command Center (Unstable)
+# Investec Command Center
 
 The following tutotial will set up a command center which can process investec transactions via GCP services.
 
-![alt text](Investec.jpg "Command Center)
+![alt text](./Investec.jpg "Command Center")
 
 It makes use of the following services:
 * Cloud Functions
