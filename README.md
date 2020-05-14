@@ -89,7 +89,3 @@ Deploy your code and simulate a transaction to make sure that everything works. 
 
 ## Issues
 If you run into any issues on the tutorial please raise an issue on gitlab or chat to me via slack.
-
-## Whats next
-* Setup Elastic + Kibana or Grafana
-* Setup React UI hooked up to Firestore database
