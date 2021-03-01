@@ -36,6 +36,18 @@ gcloud services enable cloudfunctions.googleapis.com
 gcloud services enable firestore.googleapis.com
 ```
 
+``` bash
+gcloud services enable apigateway.googleapis.com
+```
+
+``` bash
+gcloud services enable servicemanagement.googleapis.com
+```
+
+``` bash
+gcloud services enable servicecontrol.googleapis.com
+```
+
 ## Step 2
 
 ### Generate Key for Service Account
